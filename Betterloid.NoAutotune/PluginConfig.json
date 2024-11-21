@@ -1,0 +1,11 @@
+{
+  "PluginActive": "true",
+  "PluginAuthor": "SeleDreams",
+  "PluginType": "Startup",
+  "PluginAssemblyV5": "",
+  "PluginAssemblyV6": "net6.0-windows/NoAutotune.dll",
+  "PluginName": "NoAutotune",
+  "PluginVersion": "1.0.0",
+  "PluginNamespace": "NoAutotune",
+  "PluginClass": "NoAutotune"
+}

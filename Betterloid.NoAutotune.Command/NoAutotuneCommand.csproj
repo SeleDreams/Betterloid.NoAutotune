@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <SuppressWarnings>CA1416</SuppressWarnings>
+     <OutputPath>bin</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <Target Name="CopyPluginConfig" AfterTargets="Build" Condition="'$(TargetFramework)' == 'netframework4.6' Or '$(TargetFramework)' == 'net6.0-windows'">
+    <Copy SourceFiles="$(ProjectDir)PluginConfig.json" DestinationFiles="..\VOCALOID6\Plugins\$(ProjectName)\PluginConfig.json" />
+  </Target>
+
+  <Target Name="CopyDLLs" AfterTargets="Build" Condition="'$(TargetFramework)' == 'netframework4.6' Or '$(TargetFramework)' == 'net6.0-windows'">
+    <Copy SourceFiles="bin\$(TargetFramework)\$(ProjectName).dll" DestinationFiles="..\VOCALOID6\Plugins\$(ProjectName)\$(TargetFramework)\$(ProjectName).dll" />
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0">
+      <Private>false</Private>
+    </PackageReference>
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0">
+      <Private>false</Private>
+    </PackageReference>
+    <Reference Include="Betterloid" Condition="'$(TargetFramework)' == 'net6.0-windows'">
+      <HintPath>..\VOCALOID6\Plugins\Betterloid\$(TargetFramework)\Betterloid.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VOCALOID6" Condition="'$(TargetFramework)' == 'net6.0-windows'">
+      <HintPath>..\VOCALOID6\VOCALOID6.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+{
+  "PluginActive": "true",
+  "PluginAuthor": "SeleDreams",
+  "PluginType": "Editor",
+  "PluginAssemblyV5": "netframework4.6/NoAutotuneCommand.dll",
+  "PluginAssemblyV6": "net6.0-windows/NoAutotuneCommand.dll",
+  "PluginName": "Reset selection's AI tuning",
+  "PluginVersion": "1.0.0",
+  "PluginNamespace": "NoAutotuneCommand",
+  "PluginClass": "NoAutotuneCommand"
+}
